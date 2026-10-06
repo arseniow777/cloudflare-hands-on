@@ -6,23 +6,33 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "bunx --bun astro dev",
+    "client": "bunx --bun astro dev",
+    "worker": "wrangler dev",
     "build": "bun run --bun astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier . --write",
     "format:check": "prettier --check .",
-    "lint": "eslint 'src/**/*.{js,ts,tsx,astro}'"
+    "lint": "eslint 'src/**/*.{js,ts,tsx,astro}'",
+    "dev": "concurrently \"bun run client\" \"bun run worker\""
   },
   "dependencies": {
+    "@astrojs/react": "^7.0.0",
     "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@typescript-eslint/parser": "^8.71.1",
     "astro": "^7.3.5",
+    "concurrently": "^10.0.5",
     "eslint": "^10.12.0",
     "eslint-plugin-astro": "^3.2.1",
+    "hono": "^4.13.13",
     "prettier": "^3.9.9",
     "prettier-plugin-astro": "^1.1.0",
-    "tailwindcss": "^4.3.3"
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3",
+    "wrangler": "^4.147.0"
   },
   "allowScripts": {
     "esbuild": true

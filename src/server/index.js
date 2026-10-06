@@ -1,0 +1,6 @@
+import { Hono } from "hono";
+const app = new Hono();
+
+app.get("/api/healty", (c) => c.json("yeay healty🔥!"));
+
+export default app;
