@@ -1,7 +1,31 @@
 {
-  // Top-level configuration
   "name": "my-worker",
   "main": "src/server/index.js",
-  // Set this to today's date
-  "compatibility_date": "2026-10-06"
+  "compatibility_date": "2026-10-07",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    "ENVIRONMENT": "dev"
+  },
+  "env": {
+    "staging": {
+      "vars": {
+        "ENVIRONMENT": "staging"
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "cloudflare-hands-on-db",
+          "database_id": "80881db5-3101-4892-a998-01bb01c3fbb0"
+        }
+      ]
+    },
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    }
+  }
 }
