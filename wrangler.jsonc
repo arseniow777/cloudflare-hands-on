@@ -9,6 +9,14 @@
   "vars": {
     "ENVIRONMENT": "dev"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cloudflare-hands-on-local-db",
+      "database_id": "123",
+      "migrations_dir": "./src/server/db/migrations"
+    }
+  ],
   "env": {
     "staging": {
       "vars": {
@@ -18,7 +26,8 @@
         {
           "binding": "DB",
           "database_name": "cloudflare-hands-on-db",
-          "database_id": "80881db5-3101-4892-a998-01bb01c3fbb0"
+          "database_id": "80881db5-3101-4892-a998-01bb01c3fbb0",
+          "migrations_dir": "./src/server/db/migrations"
         }
       ]
     },
